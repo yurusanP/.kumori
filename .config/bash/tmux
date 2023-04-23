@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# change the default tmux socket location
+export TMUX_TMPDIR="$HOME/.local/tmp"
+if [ ! -d $TMUX_TMPDIR ]; then
+  mkdir -p $TMUX_TMPDIR
+fi
