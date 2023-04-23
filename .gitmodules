@@ -1,0 +1,9 @@
+[submodule ".local/share/omf"]
+	path = .local/share/omf
+	url = https://github.com/oh-my-fish/oh-my-fish.git
+[submodule ".local/share/nvim/site/pack/packer/start/packer.nvim"]
+	path = .local/share/nvim/site/pack/packer/start/packer.nvim
+	url = https://github.com/wbthomason/packer.nvim.git
+[submodule ".local/share/tmux/plugins/tpm"]
+	path = .local/share/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
