@@ -8,6 +8,7 @@ alias aptrm="sudo apt remove"
 
 # chore
 alias b="cd .."
+alias d="du -hs"
 alias k="clear"
 alias l="la"
 alias r="omf reload"
@@ -18,3 +19,6 @@ alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="set_color red; echo 'Error: expected trash'"
 alias trash="trash -v"
+
+# nvim
+alias vim="nvim"
