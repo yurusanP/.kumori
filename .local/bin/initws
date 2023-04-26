@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+
+import argparse
+import os
+
+parser = argparse.ArgumentParser()
+parser.add_argument("project_name", help="Name of the project")
+parser.add_argument("--remote", nargs="+", default=[], help="Remote path")
+parser.add_argument("--local", nargs="+", default=[], help="Local path")
+parser.add_argument("--debug", "-d", action="store_true", help="Debug mode")
+args = parser.parse_args()
+
+paths = [f"../../remote/{e}" for e in args.remote] + [
+    f"../../local/{e}" for e in args.local
+]
+paths_str = "'[" + ", ".join([f'"{path}"' for path in paths]) + "]'"
+
+cmd_echo = f"echo {paths_str}"
+cmd_jq = r"""jq '. | {"folders": [.[] | {"path": .}]}'"""
+cmd_debug = f"{cmd_echo} | {cmd_jq}"
+cmd_full = f"{cmd_debug} > ~/local/sanpows/{args.project_name}.code-workspace"
+
+exec = lambda cmd: os.system(cmd) if not args.debug else print(cmd)
+exec(cmd_full)

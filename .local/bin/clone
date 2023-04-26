@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+import argparse
+import os
+import re
+
+parser = argparse.ArgumentParser()
+parser.add_argument("url", help="URL to clone")
+parser.add_argument("--debug", "-d", action="store_true", help="Debug mode")
+args = parser.parse_args()
+
+# match regular expression to get the repo name
+repo_name = re.search(r"github.com(?:\/|:)(.+?\/.+?)\.git?$", args.url).group(1)
+
+exec = lambda cmd: os.system(cmd) if not args.debug else print(cmd)
+exec(f"git clone {args.url} $HOME/remote/{repo_name}")

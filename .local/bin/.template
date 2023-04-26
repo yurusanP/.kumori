@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+
+import argparse
+import os
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--debug", "-d", action="store_true", help="Debug mode")
+args = parser.parse_args()
+
+exec = lambda cmd: os.system(cmd) if not args.debug else print(cmd)
