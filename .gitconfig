@@ -10,3 +10,61 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[alias]
+	br = branch
+	co = checkout
+	ci = commit
+	st = status
+	# commit
+	cia = commit --amend
+	cis = commit -m "squash"
+	# log
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lf = lg --pretty=fuller --abbrev-commit
+	lol = log --graph --pretty=oneline --abbrev-commit
+	# rebase
+	rbi = rebase --committer-date-is-author-date -i
+	rbi1 = rbi HEAD^
+	rbi2 = rbi HEAD~2
+	rbi3 = rbi HEAD~3
+	rbc = rebase --continue
+	rbs = rebase --skip
+	rba = rebase --abort
+	# merge
+	mg = merge --no-ff
+	mgc = mg --continue
+	mga = mg --abort
+	# stash
+	s = stash
+	sa = stash apply
+	sl = stash list
+	# remote
+	r = remote
+	ra = r add
+	rao = r add origin
+	rr = r remove
+	rp = r prune
+	# submodule
+	sb = submodule
+	sba = sb add
+	sbr = sb remove
+	sbs = sb sync
+	sbu = sb update --init --recursive
+	sbr = sb update --init --recursive --remote
+	# tag
+	t = tag
+	# config
+	c = config
+	ce = c --global -e
+	# add
+	a = add
+	aa = a -A
+	# reset
+	rst = reset
+	rst1 = rst HEAD^
+	# push
+	p = push
+	po = p -u origin
+	pom = po main
+	# pull
+	pl = pull

@@ -1,5 +1,6 @@
 # git
 alias git-kumori="git --git-dir=$HOME/.kumori.git --work-tree=$HOME"
+alias g="git"
 
 # apt
 alias aptup="sudo apt update && sudo apt upgrade && sudo apt dist-upgrade"
