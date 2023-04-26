@@ -17,7 +17,8 @@
 	st = status
 	# commit
 	cia = commit --amend
-	cis = commit -m "squash"
+	cis = commit -m 'squash'
+  cif = commit -m 'first commit'
 	# log
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	lf = lg --pretty=fuller --abbrev-commit
