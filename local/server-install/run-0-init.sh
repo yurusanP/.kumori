@@ -8,6 +8,9 @@ adduser sanpo sudo
 cp -r /root/.ssh /home/sanpo/
 chown -R sanpo:sanpo /home/sanpo/.ssh
 
+# time zone
+timedatectl set-timezone America/Chicago
+
 # --- sanpo@kumori ---
 sudo apt update && sudo apt upgrade && sudo apt dist-upgrade
 xargs sudo apt install -y < apt-0-init.txt
